@@ -1,0 +1,131 @@
+@import '_colors';
+@import '_button';
+.clearfix:after {
+  content: "*";
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.button-group {
+  display: inline-block;
+  input[type="button"] {
+    background-color: white;
+    border: 1px solid #aaa;
+    color:#aaa;
+    border-radius: 0;
+    margin-right: -1px;
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}
+
+.checkbox-toggle {
+  margin: 0 auto;
+  height: 30px;
+  width: 50px;
+  border-radius: 30px;
+  position: relative;
+  transition: all 200ms linear;
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    .toggle-bar {
+      color: #000;
+    }
+  }
+  .toggle-bar {
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    border-radius: 24px;
+    background-color: white;
+    position: absolute;
+    top: 3px;
+    transition: all 200ms linear;
+  }
+}
+.wrapper {
+  display: inline-block;
+  box-sizing: border-box;
+  .selector {
+    width: 100px;
+    display: inline-block;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    color: #aaaaaa;
+    margin: 10px;
+    margin-left: 0;
+    position: relative;
+    box-sizing: border-box;
+    .selector-toggle {
+      cursor: pointer;
+      padding: 0 10px;
+      height: 34px;
+      line-height: 34px;
+      position: relative;
+      box-sizing: border-box;
+      &:hover {
+        color: #626262;
+      }
+      i {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+    }
+    .selector-option-list {
+      position: absolute;
+      left: -1px;
+      background-color: #f5f5f5;
+      border: 1px solid #aaa;
+      border-radius: 0 0 5px 5px;
+      z-index: 1;
+      width: 100px;
+      color: #626262;
+      display: none;
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        line-height: 35px;
+        padding: 0 10px;
+        &:hover {
+          background-color: #1caf9a;
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+    &.active {
+      border-radius: 5px 5px 0 0;
+      .selector-option-list {
+        display: block;
+      }
+    }
+  }
+}
+
+.radio {
+  display: inline-block;
+  margin-bottom: 20px;
+  .options {
+    display: inline-block;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #eee;
+    color: #aaa;
+    margin-right: 10px;
+    cursor: pointer;
+    &:hover {
+      color: #333;
+    }
+  }
+}
